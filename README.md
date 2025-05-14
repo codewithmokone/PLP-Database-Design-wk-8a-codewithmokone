@@ -1,6 +1,6 @@
 # Student Records Database
 
-https://github.com/codewithmokone/PLP-Database-Design-wk-8a-codewithmokone/blob/main/README.md
+
 ## Project Title
 **Student Records Management System**
 
