@@ -1,12 +1,13 @@
 # Student Records Database
 
+https://github.com/codewithmokone/PLP-Database-Design-wk-8a-codewithmokone/blob/main/README.md
 ## Project Title
 **Student Records Management System**
 
 ## Description
 This project provides a basic SQL-based schema for managing a simple student records system. It includes the creation of database with tables for departments, students, and courses, as well as the insertion of sample data.
 
-### M=The main features include:
+### The main features include:
 - Storing department name and ID's.
 - Maintaining student profiles linked to departments.
 - Managing courses with credit information and department asspciation.
