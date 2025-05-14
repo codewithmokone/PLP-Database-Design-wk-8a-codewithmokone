@@ -1,45 +1,44 @@
--- Question 1: Build a Complete Database Management System
+-- Build a Complete Database Management System
 
--- Creating Database
+-- Creating the StudentRecords database
 CREATE DATABASE StudentRecords;
 
--- Departments Table
+-- Creating the Departments table to store department information
 CREATE TABLE Departments (
-    DepartmentID INT PRIMARY KEY AUTO_INCREMENT,
-    DepartmentName VARCHAR(100) NOT NULL UNIQUE
+    DepartmentID INT PRIMARY KEY AUTO_INCREMENT,    -- Unique identifier for each department
+    DepartmentName VARCHAR(100) NOT NULL UNIQUE     -- Department name
 );
 
--- Student Profile Table
+-- Creating the Student's table to store student profiles
 CREATE TABLE Students (
-    StudentID INT PRIMARY KEY AUTO_INCREMENT,
-    FirstName VARCHAR(50) NOT NULL,
-    LastName VARCHAR(50) NOT NULL,
-    Email VARCHAR(100) NOT NULL UNIQUE,
-    DepartmentID INT,
-    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+    StudentID INT PRIMARY KEY AUTO_INCREMENT,       -- Unique identifier for each student
+    FirstName VARCHAR(50) NOT NULL,                 -- Student's first name
+    LastName VARCHAR(50) NOT NULL,                  -- Student's last name
+    Email VARCHAR(100) NOT NULL UNIQUE,             -- Student's email
+    DepartmentID INT,                               -- Foreign key linking student to a department
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID) -- Ensures valid department reference
 );
 
--- Courses Table
+-- Creating the Course table to store course details
 CREATE TABLE Courses (
-    CourseID INT PRIMARY KEY AUTO_INCREMENT,
-    CourseName VARCHAR(100) NOT NULL,
-    Credits INT NOT NULL,
-    DepartmentID INT NOT NULL,
-    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+    CourseID INT PRIMARY KEY AUTO_INCREMENT,        -- Unique identifier for each course
+    CourseName VARCHAR(100) NOT NULL,               -- Name of the course
+    Credits INT NOT NULL,                           -- Number of credit hours
+    DepartmentID INT NOT NULL,                      -- Foreign key linking course to a department
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID) -- Ensures valid department reference
 );
 
---Sample Data
--- Departments data
+-- Inserting sample data into the Departments table
 INSERT INTO Departments (DepartmentName) VALUES 
-('Computer Science'),
-('Mathematics');
+('Computer Science'),   -- Department 1
+('Mathematics');        -- Department 2
 
--- Student data
+-- Inserting sample data into the Student records
 INSERT INTO Students (FirstName, LastName, Email, DepartmentID) VALUES 
-('Alicia', 'Keys', 'aliciakeysh@main.com', 1),
-('Ace', 'Lee', 'acelee@mail.com', 2);
+('Alicia', 'Keys', 'aliciakeysh@main.com', 1),  -- Student in Computer Science
+('Ace', 'Lee', 'acelee@mail.com', 2);           -- Student in Mathematics
 
--- Courses data
+-- Inserting sample Course records
 INSERT INTO Courses (CourseName, Credits, DepartmentID) VALUES 
-('Computer Science', 4, 1),
-('Mathematics', 3, 2);
+('Computer Science', 4, 1), -- Course under Computer Science department
+('Mathematics', 3, 2);  -- Course ubder Mathematics department
